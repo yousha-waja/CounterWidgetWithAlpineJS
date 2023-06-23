@@ -28,7 +28,7 @@
           <div class="col-sm-6">
             <button
               class="btn w-100 btn-warning increment"
-              x-on:click="count++; show1 = !show1; setTimeout(()=> {show1=false},2000)"
+              x-on:click="count++; show1 = true; setTimeout(()=> {show1=false},2000)"
             >
               <p>Increment</p>
             </button>
@@ -36,7 +36,7 @@
           <div class="col-sm-6">
             <button
               class="btn w-100 btn-danger decrement"
-              x-on:click="if(count > 0) { count--; show2= !show2; setTimeout(()=> {show2=false},2000) } else { alert('Counter has reached its lower limit = 0') }"
+              x-on:click="if(count > 0) { count--; show2= true; setTimeout(()=> {show2=false},2000) } else { alert('Counter has reached its lower limit = 0') }"
             >
               <p>Decrement</p>
             </button>
@@ -46,8 +46,12 @@
           <div class="col-xs-1 col-sm-3 mx-auto bg-danger" x-text="count">
             <h1>9</h1>
           </div>
-          <div class="col-12 mx-auto" x-show="show1">"Count increased by one"</div>
-          <div class="col-12 mx-auto" x-show="show2">"Count decreased by one"</div>
+          <div class="col-12 mx-auto" x-show="show1">
+            "Count increased by one"
+          </div>
+          <div class="col-12 mx-auto" x-show="show2">
+            "Count decreased by one"
+          </div>
         </div>
       </div>
     </div>
