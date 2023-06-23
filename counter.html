@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Counter Widget using AlpineJS</title>
+  </head>
+  <body>
+    <div class="widget" x-data="{count:0, show1: false, show2: false}">
+      <div class="container bg-primary">
+        <div class="row">
+          <div class="col text-center">
+            <h1>Counter Widget</h1>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-sm-6">
+            <button
+              class="btn w-100 btn-warning increment"
+              x-on:click="count++; show1 = !show1; setTimeout(()=> {show1=false},2000)"
+            >
+              <p>Increment</p>
+            </button>
+          </div>
+          <div class="col-sm-6">
+            <button
+              class="btn w-100 btn-danger decrement"
+              x-on:click="if(count > 0) { count--; show2= !show2; setTimeout(()=> {show2=false},2000) } else { alert('Counter has reached its lower limit = 0') }"
+            >
+              <p>Decrement</p>
+            </button>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-xs-1 col-sm-3 mx-auto bg-danger" x-text="count">
+            <h1>9</h1>
+          </div>
+          <div class="col-12 mx-auto" x-show="show1">"Count increased by one"</div>
+          <div class="col-12 mx-auto" x-show="show2">"Count decreased by one"</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
