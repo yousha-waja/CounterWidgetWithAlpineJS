@@ -44,3 +44,19 @@ p {
     color: rgb(0, 157, 255);
     font-weight: lighter;
   }
+
+.reset {
+    border-radius: 100%;
+    width: 6=16dvh;
+
+
+}
+
+size {
+    height: 2000px
+}
+
+h2 {
+    font-size: 2dvh;
+}
+
